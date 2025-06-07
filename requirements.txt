@@ -1,7 +1,7 @@
-streamlit
-pandas
-numpy
-matplotlib
 ccxt
+pandas
+streamlit
+matplotlib
 statsmodels
 scikit-learn
+numpy
