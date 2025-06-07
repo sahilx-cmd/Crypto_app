@@ -5,4 +5,3 @@ matplotlib
 ccxt
 statsmodels
 scikit-learn
-pmdarima
