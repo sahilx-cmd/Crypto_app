@@ -1,6 +1,7 @@
 import ccxt
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime
+import numpy as np
 
 def get_crypto_data(symbol='BTC/USDT', exchange_name='binance', timeframe='1d', limit=365):
     try:
@@ -12,9 +13,9 @@ def get_crypto_data(symbol='BTC/USDT', exchange_name='binance', timeframe='1d', 
         return df
     except Exception as e:
         print(f"Error fetching data from {exchange_name}: {e}")
-        # Fallback: generate dummy data for last 365 days
+        # Fallback: generate dummy data
         dates = pd.date_range(end=datetime.today(), periods=limit)
-        prices = pd.Series(1000 + (pd.np.random.randn(limit).cumsum()), index=dates).abs()
+        prices = pd.Series(1000 + np.random.randn(limit).cumsum(), index=dates).abs()
         df_fallback = pd.DataFrame({'close': prices})
         df_fallback.index.name = 'timestamp'
         return df_fallback
