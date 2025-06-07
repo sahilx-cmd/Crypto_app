@@ -1,7 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from crypto_data import get_crypto_data
-from sarima_model import train_sarima
+from sari import train_sarima
 st.set_page_config(page_title="Crypto Price Predictor", layout="wide")
 st.title("📈 Cryptocurrency Price Forecast using SARIMA")
 
